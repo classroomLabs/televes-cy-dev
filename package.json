@@ -1,6 +1,6 @@
 {
   "name": "cy-dev",
-  "version": "2.1.2",
+  "version": "12.0.0",
   "description": "Sample code for Cypress development courses",
   "author": {
     "name": "Alberto Basalo",
@@ -17,7 +17,7 @@
     "url": "https://github.com/AlbertoBasalo/cy-dev/issues"
   },
   "scripts": {
-    "start": "",
+    "start": "cypress open",
     "test": "",
     "format": "prettier --write \"./**/*.{ts,json}\"",
     "lint": "eslint src --ext .ts",
