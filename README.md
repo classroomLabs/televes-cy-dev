@@ -1,27 +1,53 @@
-# quark
+# CyDev
 
-Fundamental **TypeScript** project template
+Sample code for Cypress development courses by [Alberto Basalo](https://albertobasalo.dev)
 
-> Clone, fork or use as a template repository for creating your next **TypeScript** project.
+## Clone Repository, install dependencies, and run the project
 
 ```bash
-git clone https://github.com/AlbertoBasalo/quark your-project
-cd your-project
+git clone https://github.com/AlbertoBasalo/cy-dev
+cd cy-dev
 npm install
+# add cypress as dev dependency
+npm i -D cypress
+# run cypress
+npm start
 ```
 
-## 🎯 Motivation
+## 🛠 VS Code configuration
 
-Avoid start from an empty repository.
+- [My Visual Studio Code .dotfiles](https://github.com/AlbertoBasalo/dotfiles)
 
-Have a template to create _TypeScript_ repositories with a project already configured.
+### ⚙️ Settings
 
-A **boilerplate** ready to apply clean code techniques and testing.
+- [How to configure VSCode to code better TypeScript](https://albertobasalo.medium.com/how-to-configure-vscode-to-code-better-typescript-d6e000b2cb06?sk=4c0edee7dd123c0e0c7c6f7266c91e4d)
 
-### 📚 Documentation
+- [My settings.json](https://github.com/AlbertoBasalo/dotfiles/blob/main/settings.json)
 
-- [Workflows for develop, test and deploy](./docs/workflows.md)
-- [VS code Settings and Extensions](./docs/settings.md)
+### 🧩 Extensions
+
+- [5 VSCode extensions to write better TypeScript](https://albertobasalo.medium.com/5-vscode-extensions-to-write-better-typescript-9804acbada9?sk=8907a533ca7e5b14aa2daa397bb667d1)
+
+- [All the Extensions I use](https://github.com/AlbertoBasalo/dotfiles/blob/main/extensions-i-use.md)
+
+### 👩🏼‍⚖️ EsLint rules
+
+- [Fine-tune ESLint rules to write better TypeScript](https://albertobasalo.medium.com/fine-tune-eslint-rules-to-code-better-typescript-e4cabbbe2fa1?sk=fe0c1c07936f2c4a503dbce0272da621)
+
+- [My eslint.json](https://github.com/AlbertoBasalo/dotfiles/blob/main/eslint.json)
+
+#### ⌨ VS Code Shortcuts
+
+- `F1` :command list
+- `CTRL+P` : file
+- `CTRL+T` : search code
+- `CTRL+K CTRL+Z` : code comment
+- `CTRL+K CTRL+U` : uncomment code
+- `F12` : go to definition
+- `CTRL+Ñ` : show hide terminal
+- `CTRL+B`: show hide navigation bar
+- `CTRL+K S` : save al files
+- `ALT+up|down` : move line
 
 ---
 
