@@ -11,7 +11,7 @@ describe("The Activity Bookings home page", () => {
   it("should have an h1 with 'Activity Bookings' text", () => {
     cy.get("h1").should("have.text", "Activity Bookings");
   });
-  it("should contains '© Alberto Basalo' in the footer", () => {
+  it("should contain '© Alberto Basalo' in the footer", () => {
     cy.get("footer").contains("© Alberto Basalo");
   });
   it("should have a link to albertobasalo.dev", () => {

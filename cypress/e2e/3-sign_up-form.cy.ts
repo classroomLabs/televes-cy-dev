@@ -24,7 +24,7 @@ describe("The sign-up form", () => {
       cy.get("#username").clear();
       cy.get("#username").should("have.class", "ng-invalid");
     });
-    it("should shoe an error for user name while invalid", () => {
+    it("should show an error for user name while invalid", () => {
       cy.get("#username").clear().type("a");
       cy.get("[data-test='username.error']").should("be.visible");
     });

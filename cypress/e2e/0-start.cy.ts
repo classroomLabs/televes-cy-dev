@@ -10,7 +10,7 @@ describe("The Activity Bookings home page", () => {
     cy.visit("http://localhost:4200/");
     cy.get("h1").contains("Activity Bookings");
   });
-  it("should contains '© Alberto Basalo' in the footer", () => {
+  it("should contain '© Alberto Basalo' in the footer", () => {
     cy.visit("http://localhost:4200/");
     cy.get("footer").contains("© Alberto Basalo");
   });
