@@ -14,6 +14,12 @@ npm i -D cypress
 npm start
 ```
 
+## Target project (Subject under test)
+
+It is a demo web app with simple but enought functionality. Get clone, install the dependecies and follow instructions to start a local server.
+
+- [Ng Dev demo app](https://github.com/AlbertoBasalo/ng-dev)
+
 ## 🛠 VS Code configuration
 
 - [My Visual Studio Code .dotfiles](https://github.com/AlbertoBasalo/dotfiles)
