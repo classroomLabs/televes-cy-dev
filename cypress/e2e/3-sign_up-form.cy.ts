@@ -8,7 +8,7 @@ describe("The sign-up form", () => {
       cy.get("form input").should("exist");
       cy.get("form button").should("exist");
     });
-    it.only("should allow to submit the form", () => {
+    it("should allow to submit the form", () => {
       cy.get("#username").clear().type("Alberto");
       cy.get('[type="email"]').clear().type("a@b.c");
       cy.get('[type="password"]').first().type("123a");
