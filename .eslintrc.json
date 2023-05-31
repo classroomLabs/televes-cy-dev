@@ -19,36 +19,6 @@
   "rules": {
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "@typescript-eslint/explicit-function-return-type": "warn",
-    "@typescript-eslint/explicit-member-accessibility": [
-      "warn",
-      {
-        "accessibility": "no-public",
-        "overrides": {
-          "parameterProperties": "explicit"
-        }
-      }
-    ],
-    "@typescript-eslint/naming-convention": [
-      "warn",
-      {
-        "format": ["camelCase"],
-        "leadingUnderscore": "forbid",
-        "selector": "default"
-      },
-      {
-        "format": ["PascalCase"],
-        "selector": "typeLike"
-      },
-      {
-        "format": ["PascalCase"],
-        "prefix": ["T", "K"],
-        "selector": "typeParameter"
-      },
-      {
-        "format": ["UPPER_CASE"],
-        "selector": "enumMember"
-      }
-    ],
     "@typescript-eslint/no-empty-function": "warn",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-useless-constructor": "warn",
@@ -66,7 +36,7 @@
     "max-lines-per-function": [
       "warn",
       {
-        "max": 50,
+        "max": 100,
         "skipBlankLines": true,
         "skipComments": true
       }
