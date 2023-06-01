@@ -1,5 +1,5 @@
-const API_URL = "http://localhost:3000/activities";
 describe("The Home page", () => {
+  const API_URL = "http://localhost:3000/activities*";
   beforeEach(() => {
     cy.visit("http://localhost:4200/");
   });
@@ -57,11 +57,11 @@ describe("The Home page", () => {
   context("when data arrives", () => {
     beforeEach(() => {
       cy.intercept("GET", API_URL, {
-        body: [{ id: 1, name: "Activity 1" }],
+        fixture: "activities",
       });
     });
-    it("should have an unordered list", () => {
-      cy.get("ul").should("exist");
+    it("should have main list content", () => {
+      cy.get("main[name='list-content']").should("exist");
     });
     it("should not show an error dialog", () => {
       cy.get("#error-dialog").should("not.exist");

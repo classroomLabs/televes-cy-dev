@@ -17,12 +17,13 @@
   },
   "plugins": ["prettier", "@typescript-eslint"],
   "rules": {
-    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "prettier/prettier": ["off", { "endOfLine": "auto" }],
     "@typescript-eslint/explicit-function-return-type": "warn",
     "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-useless-constructor": "warn",
-    "arrow-parens": ["warn", "as-needed"],
+    "arrow-parens": ["warn", "always"],
     "block-spacing": ["warn", "always"],
     "complexity": [
       "warn",

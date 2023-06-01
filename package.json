@@ -17,7 +17,7 @@
     "url": "https://github.com/AlbertoBasalo/cy-dev/issues"
   },
   "scripts": {
-    "start": "cypress open",
+    "start": "cypress open --e2e --browser chrome",
     "test": "",
     "format": "prettier --write \"./**/*.{ts,json}\"",
     "lint": "eslint src --ext .ts",
