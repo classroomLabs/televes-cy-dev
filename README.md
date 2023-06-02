@@ -8,15 +8,15 @@ Sample code for Cypress development courses by [Alberto Basalo](https://albertob
 git clone https://github.com/AlbertoBasalo/cy-dev
 cd cy-dev
 npm install
-# add cypress as dev dependency
-npm i -D cypress
 # run cypress
 npm start
+# alternatively add cypress as dev dependency
+npm i -D cypress
 ```
 
 ## Target project (Subject under test)
 
-It is a demo web app with simple but enought functionality. Get clone, install the dependecies and follow instructions to start a local server.
+It is a demo web app with simple but enough functionality. Get clone, install the dependencies and follow instructions to start a local server.
 
 - [Ng Dev demo app](https://github.com/AlbertoBasalo/ng-dev)
 
