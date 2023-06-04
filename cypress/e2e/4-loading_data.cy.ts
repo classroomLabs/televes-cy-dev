@@ -45,7 +45,7 @@ describe("The Home page", () => {
       });
     });
     it("should show a no data message", () => {
-      cy.get("article[name='Activity list']").should("contain.text", "No data");
+      cy.get("article[name='Published activities']").should("contain.text", "No data yet!");
     });
     it("should not show an error dialog", () => {
       cy.get("#error-dialog").should("not.exist");
