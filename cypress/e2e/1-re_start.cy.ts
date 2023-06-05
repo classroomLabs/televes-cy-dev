@@ -5,11 +5,11 @@ describe("The Activity Bookings home page", () => {
   it("should be visitable", () => {
     cy.get("html").should("exist");
   });
-  it("should have an h1", () => {
-    cy.get("h1").should("exist");
+  it("should have a banner", () => {
+    cy.get("[role=banner]").should("exist");
   });
-  it("should have an h1 with 'Activity Bookings' text", () => {
-    cy.get("h1").should("have.text", "Activity Bookings");
+  it("should have an banner with 'Activity Bookings' text", () => {
+    cy.get("[role=banner]").should("contain.text", "Activity Bookings");
   });
   it("should contain '© Alberto Basalo' in the footer", () => {
     cy.get("footer").contains("© Alberto Basalo");
