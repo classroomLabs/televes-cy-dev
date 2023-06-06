@@ -1,11 +1,13 @@
 describe("Given the list of activities at the Home page", () => {
   const API_URL = "http://localhost:3000/activities?state=published";
   let publishedActivities: any[] = [];
+  let firstActivity: any = {};
   beforeEach(() => {
     cy.visit("http://localhost:4200/");
     cy.fixture("activities").then((activitiesElement) => {
       const activities = activitiesElement as unknown as any[];
       publishedActivities = activities.filter((activity: any) => activity.state === "published");
+      firstActivity = publishedActivities[0];
       cy.intercept("GET", API_URL, {
         body: publishedActivities,
       });
@@ -13,10 +15,9 @@ describe("Given the list of activities at the Home page", () => {
   });
   context("when click on a home page activity link", () => {
     beforeEach(() => {
-      cy.get("main[name='list-content'] div:nth-child(1) > .grid > [name='title'] > a").click();
+      cy.get(`#${firstActivity.id} a`).click();
     });
     it("then should navigate the activity detail page", () => {
-      const firstActivity = publishedActivities[0];
       cy.url().should("include", `/activities/${firstActivity.slug}`);
     });
   });

@@ -8,8 +8,8 @@ describe("The Activity Bookings home page", () => {
   it("should have a banner", () => {
     cy.get("[role=banner]").should("exist");
   });
-  it("should have an banner with 'Activity Bookings' text", () => {
-    cy.get("[role=banner]").should("contain.text", "Activity Bookings");
+  it("should have an app-title class with 'Activity Bookings' text", () => {
+    cy.get(".app-title").should("contain.text", "Activity Bookings");
   });
   it("should contain '© Alberto Basalo' in the footer", () => {
     cy.get("footer").contains("© Alberto Basalo");

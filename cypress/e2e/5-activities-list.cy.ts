@@ -17,10 +17,10 @@ describe("Given the Activities list", () => {
   });
   it("should show activities name, price, and date", () => {
     const firstActivity = publishedActivities[0];
-    cy.get("main[name='list-content'] div:nth-child(1) > .grid").then((firstActivityElement) => {
+    cy.get(`#${firstActivity.id}`).then((firstActivityElement) => {
       expect(firstActivityElement.find('[name="title"]')).to.contain.text(firstActivity.title);
-      expect(firstActivityElement.find('[name="price"]')).to.contain.text(firstActivity.price);
-      const printedDate = firstActivityElement.find('[name="date"]').text();
+      expect(firstActivityElement.find('[itemprop="priceCurrency"]')).to.contain.text(firstActivity.price);
+      const printedDate = firstActivityElement.find("time").text();
       const actual = new Date(printedDate).toLocaleDateString();
       const expected = new Date(firstActivity.date).toLocaleDateString();
       expect(actual).to.equals(expected);
