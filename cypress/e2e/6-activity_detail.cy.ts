@@ -15,7 +15,7 @@ describe("Given the list of activities at the Home page", () => {
   });
   context("when click on a home page activity link", () => {
     beforeEach(() => {
-      cy.get(`#${firstActivity.id} a`).click();
+      cy.get(`#${firstActivity.slug} a`).click();
     });
     it("then should navigate the activity detail page", () => {
       cy.url().should("include", `/activities/${firstActivity.slug}`);
