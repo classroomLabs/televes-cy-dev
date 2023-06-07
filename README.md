@@ -1,12 +1,12 @@
-# CyDev
+# Cypress development for TELEVES
 
 Sample code for Cypress development courses by [Alberto Basalo](https://albertobasalo.dev)
 
 ## Clone Repository, install dependencies, and run the project
 
 ```bash
-git clone https://github.com/AlbertoBasalo/cy-dev
-cd cy-dev
+git clone https://github.com/classroomLabs/televes-cy-dev
+cd televes-cy-dev
 npm install
 # run cypress
 npm start
