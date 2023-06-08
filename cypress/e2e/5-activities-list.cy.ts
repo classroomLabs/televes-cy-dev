@@ -1,3 +1,12 @@
+/**
+ * Given the Activities list
+ *   should show the number of activities
+ *   should show activities name, price, and date
+ *   should have a link to the activity page
+ *   should list in a monospace font
+ *   should only show published activities
+ */
+
 describe("Given the Activities list", () => {
   const API_URL = "http://localhost:3000/activities?state=published";
   let publishedActivities: any[] = [];

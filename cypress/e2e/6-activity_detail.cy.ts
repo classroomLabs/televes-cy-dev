@@ -1,3 +1,8 @@
+/**
+ * Given the list of activities at the Home page
+ *  when click on a home page activity link
+ *  then should navigate the activity detail page
+ */
 describe("Given the list of activities at the Home page", () => {
   const API_URL = "http://localhost:3000/activities?state=published";
   let publishedActivities: any[] = [];
@@ -23,11 +28,12 @@ describe("Given the list of activities at the Home page", () => {
   });
 });
 
-// given the detail page of the first activity
-// then should load the activity information
-// when data is loaded
-// then should show the full activity information
-
+/**
+ * given the detail page of the first activity
+ *    then should load the activity information
+ *   when data is loaded
+ *    then should show the full activity information
+ */
 describe("Given the detail page of the first activity", () => {
   let publishedActivities: any[] = [];
   let firstActivity: any = {};
