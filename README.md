@@ -14,7 +14,7 @@ npm start
 npm i -D cypress
 ```
 
-## Target project [Subject under test](https://github.com/AlbertoBasalo/ng-dev)
+## Target project [_Subject Under Test_](https://github.com/AlbertoBasalo/ng-dev)
 
 It is a demo web app with simple but enough functionality. Get clone, install the dependencies and follow instructions to start a local server.
 
