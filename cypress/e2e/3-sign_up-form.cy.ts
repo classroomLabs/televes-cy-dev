@@ -16,6 +16,7 @@
  *     should clear the form when the reset button is clicked
  */
 describe("The sign-up form", () => {
+  before(() => {});
   beforeEach(() => {
     cy.visit("http://localhost:4200/auth/sign-up");
   });
@@ -23,7 +24,7 @@ describe("The sign-up form", () => {
     cy.get("form input").should("have.length", 4);
     cy.get("form button[type='submit']").should("be.disabled");
   });
-  context.only("when the users fills the form correctly", () => {
+  context("when the users fills the form correctly", () => {
     beforeEach(() => {
       cy.get("#username").clear().type("John Smith");
       cy.get("[type='email']").clear().type("JohnSmith@acme.com");
@@ -80,5 +81,8 @@ describe("The sign-up form", () => {
       cy.get('[type="password"]').first().should("have.value", "");
       cy.get('[name="repeatPassword"]').should("have.value", "");
     });
+  });
+  afterEach(() => {
+    cy.contains("button", "Reset").click();
   });
 });
