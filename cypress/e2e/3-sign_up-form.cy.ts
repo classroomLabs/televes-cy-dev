@@ -12,6 +12,21 @@
  *     should show an error for user name while invalid
  *     should mark the username as valid if it is not empty
  *     should mark the email as invalid if it is not an email
- *  when the user resets the form
+ *   when the user resets the form
  *     should clear the form when the reset button is clicked
  */
+describe("The sign-up form", () => {
+  beforeEach(() => {});
+  it("should have a form with 4 inputs and a submit button disabled", () => {});
+  context("when the users fills the form correctly", () => {
+    beforeEach(() => {});
+    it("should allow to submit the form", () => {});
+    it("should mark all inputs as valid", () => {});
+  });
+  context("when the user fills the form incorrectly", () => {
+    it("should disabled the submit button if the form is invalid", () => {});
+  });
+  context("when the user resets the form", () => {
+    it("", () => {});
+  });
+});
