@@ -17,3 +17,76 @@
  *     should not show an error dialog
  *     should not show a loading message
  */
+describe("The Home page", () => {
+  // http://localhost:3000/activities?state=published
+  const API_URL = `${Cypress.env("apiUrl")}/activities*`;
+  beforeEach(() => {
+    cy.visit("/");
+  });
+  context("when page is loading data", () => {
+    beforeEach(() => {
+      cy.intercept("GET", API_URL, {
+        delay: 1000,
+      });
+    });
+    it("should show a loading message", () => {
+      cy.get("aside[aria-busy='true']").should("exist");
+    });
+    it("should not show an error dialog", () => {
+      cy.get("#error-dialog").should("not.exist");
+    });
+    it("should not show data", () => {
+      cy.get("article[name='Activity list']").should("not.exist");
+    });
+  });
+  context("when there is an error", () => {
+    beforeEach(() => {
+      cy.intercept("GET", API_URL, {
+        statusCode: 404,
+      });
+    });
+    it("should show an error dialog", () => {
+      cy.get("#error-dialog").should("be.visible");
+    });
+    it("should not show a loading message", () => {
+      cy.get("aside[aria-busy='true']").should("not.exist");
+    });
+    it("should not show data", () => {
+      cy.get("article[name='Activity list']").should("not.exist");
+    });
+  });
+  context("when no data arrives", () => {
+    beforeEach(() => {
+      cy.intercept("GET", API_URL, {
+        statusCode: 204,
+        body: [],
+      });
+    });
+    it("should show a no data message", () => {
+      cy.get("article[name='Published activities']").should("contain.text", "No data yet!");
+    });
+    it("should not show an error dialog", () => {
+      cy.get("#error-dialog").should("not.exist");
+    });
+    it("should not show a loading message", () => {
+      cy.get("aside[aria-busy='true']").should("not.exist");
+    });
+  });
+  context("when data arrives", () => {
+    beforeEach(() => {
+      cy.intercept("GET", API_URL, {
+        statusCode: 200,
+        fixture: "activities",
+      });
+    });
+    it("should have main list content", () => {
+      cy.get("main[name='list-content']").should("exist");
+    });
+    it("should not show an error dialog", () => {
+      cy.get("#error-dialog").should("not.exist");
+    });
+    it("should not show a loading message", () => {
+      cy.get("aside[aria-busy='true']").should("not.exist");
+    });
+  });
+});
