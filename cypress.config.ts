@@ -5,6 +5,8 @@ export default defineConfig({
     baseUrl: "http://localhost:4200",
     viewportHeight: 768,
     viewportWidth: 1024,
+    video: false,
+
     env: {
       apiUrl: "http://localhost:3000",
     },
