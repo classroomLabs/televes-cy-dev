@@ -1,3 +1,5 @@
+import { RegisterPage } from "../../support/pages/register.page";
+
 /**
  * Given an already registered and logged user
  *  when visits the home page
@@ -56,6 +58,18 @@ describe("Given a secured endpoint returning 401", () => {
     it("should be redirected to the register page", () => {
       cy.wait("@getSecuredApi");
       cy.url().should("equal", REGISTER_URL);
+    });
+  });
+});
+
+describe("Given the Register Page", () => {
+  const registerPage = new RegisterPage();
+  context("when the user visits a page calling it", () => {
+    beforeEach(() => {
+      registerPage.visit();
+    });
+    it("fill the register page", () => {
+      registerPage.setUserName("John");
     });
   });
 });
