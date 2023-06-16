@@ -20,14 +20,13 @@
 describe("The Home page", () => {
   // http://localhost:3000/activities?state=published
   const API_URL = `${Cypress.env("apiUrl")}/activities*`;
-  beforeEach(() => {
-    cy.visit("/");
-  });
+  beforeEach(() => {});
   context("when page is loading data", () => {
     beforeEach(() => {
       cy.intercept("GET", API_URL, {
         delay: 1000,
       });
+      cy.visit("/");
     });
     it("should show a loading message", () => {
       cy.get("aside[aria-busy='true']").should("exist");
@@ -44,6 +43,7 @@ describe("The Home page", () => {
       cy.intercept("GET", API_URL, {
         statusCode: 404,
       });
+      cy.visit("/");
     });
     it("should show an error dialog", () => {
       cy.get("#error-dialog").should("be.visible");
@@ -61,6 +61,7 @@ describe("The Home page", () => {
         statusCode: 204,
         body: [],
       });
+      cy.visit("/");
     });
     it("should show a no data message", () => {
       cy.get("article[name='Published activities']").should("contain.text", "No data yet!");
@@ -78,6 +79,7 @@ describe("The Home page", () => {
         statusCode: 200,
         fixture: "activities",
       });
+      cy.visit("/");
     });
     it("should have main list content", () => {
       cy.get("main[name='list-content']").should("exist");
