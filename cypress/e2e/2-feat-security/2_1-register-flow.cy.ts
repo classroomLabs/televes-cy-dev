@@ -50,4 +50,22 @@ describe("Given a user at registration flow", () => {
       cy.get("#user-menu").should("be.visible");
     });
   });
+
+  context("when sends invalid new credentials", () => {
+    beforeEach(() => {
+      cy.intercept("POST", API_URL, {
+        statusCode: 400,
+        body: "Invalid credentials",
+      }).as("postRegister");
+      cy.visit(PAGE_URL);
+      cy.loginUI(NEW_USER.username, NEW_USER.email, NEW_USER.password);
+    });
+    it("should show the error dialog", () => {
+      cy.wait("@postRegister");
+      cy.get("#error-dialog").should("be.visible");
+    });
+    it("should display anonymous menu", () => {
+      cy.get("#anonymous-menu").should("be.visible");
+    });
+  });
 });

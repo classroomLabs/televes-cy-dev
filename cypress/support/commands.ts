@@ -1,4 +1,8 @@
+/* eslint-disable @typescript-eslint/no-namespace */
 /// <reference types="cypress" />
+
+export const TOKEN_KEY = "user-access-token";
+
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -11,7 +15,20 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+Cypress.Commands.add("loginUI", (username, email, password) => {
+  cy.get("#username").clear().type(username);
+  cy.get('[type="email"]').clear().type(email);
+  cy.get('[type="password"]').first().type(password);
+  cy.get('[name="repeatPassword"]').type(password);
+  cy.get("form button[type=submit]").click();
+});
+Cypress.Commands.add("login", () => {
+  cy.fixture("token").then((token) => localStorage.setItem(TOKEN_KEY, JSON.stringify(token)));
+});
+Cypress.Commands.add("logout", () => {
+  // localStorage.removeItem(TOKEN_KEY);
+  cy.window().its("localStorage").invoke("removeItem", TOKEN_KEY);
+});
 //
 //
 // -- This is a child command --
@@ -25,13 +42,13 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 //
-// declare global {
-//   namespace Cypress {
-//     interface Chainable {
-//       login(email: string, password: string): Chainable<void>
-//       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-//     }
-//   }
-// }
+
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      loginUI(username: string, email: string, password: string): Chainable<void>;
+      login(): Chainable<void>;
+      logout(): Chainable<void>;
+    }
+  }
+}
