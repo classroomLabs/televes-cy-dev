@@ -30,6 +30,19 @@ Cypress.Commands.add("logout", () => {
   cy.window().its("localStorage").invoke("removeItem", TOKEN_KEY);
 });
 //
+// Cypress.Commands.add("registerUIplus", () => {
+//   const AUTH_URL = "/auth/sign-up";
+//   const API_AUTH_URL = `${Cypress.env("apiUrl")}/register`;
+//   cy.fixture("new-user").then((NEW_USER) => {
+//     cy.intercept("POST", API_AUTH_URL, {
+//       statusCode: 201,
+//       fixture: "token",
+//     }).as("postRegister");
+//     cy.visit(AUTH_URL);
+//     cy.registerUI(NEW_USER.username, NEW_USER.email, NEW_USER.password);
+//   });
+// });
+
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
